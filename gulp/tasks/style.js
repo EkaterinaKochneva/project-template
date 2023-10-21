@@ -5,7 +5,6 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const groupCssMediaQueries = require('gulp-group-css-media-queries');
-const browserSync = require('browser-sync');
 
 module.exports = function style() {
   return src(`${path.styles.src}`)
