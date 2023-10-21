@@ -1,5 +1,5 @@
-const gulp = require('gulp');
-const browserSync = require('browser-sync');
+const { watch, series, parallel } = require('gulp');
+const browserSync = require('browser-sync').create();
 const path = require('./gulp/config/path.js');
 
 //Сервер
@@ -21,14 +21,20 @@ const server =() => {
 const html = require('./gulp/tasks/html.js')
 const style = require('./gulp/tasks/style.js')
 
+
+//Наблюдатель
+const watcher = () => {
+  watch(`${path.html.watch}`, html).on('all', browserSync.reload);
+  watch(`${path.styles.watch}`, style).on('all', browserSync.reload);
+}
+
 exports.html = html;
 exports.style = style;
 exports.server = server;
+exports.watcher = watcher;
 
 //Сборка
-
-exports.default = gulp.series(
-  html,
-  style,
-  server
+exports.default = series(
+  parallel(html, style),
+  parallel(watcher, server)
 )

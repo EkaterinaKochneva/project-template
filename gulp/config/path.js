@@ -7,11 +7,13 @@ module.exports = {
 
   styles: {
     src: `${srcFolder}/styles/style.scss`,
-    build: `${buildFolder}/css/`
+    build: `${buildFolder}/css/`,
+    watch: `${srcFolder}/**/*.scss`,
   },
   
   html: {
     src: `${srcFolder}/pages/*.html`,
-    build: `${buildFolder}/`
+    build: `${buildFolder}/`,
+    watch: `${srcFolder}/**/*.html`
   }
 }
