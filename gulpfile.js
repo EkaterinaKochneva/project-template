@@ -18,6 +18,7 @@ const server =() => {
 }
 
 // Задачи
+const clear = require('./gulp/tasks/clear.js')
 const html = require('./gulp/tasks/html.js')
 const style = require('./gulp/tasks/style.js')
 
@@ -28,6 +29,7 @@ const watcher = () => {
   watch(`${path.styles.watch}`, style).on('all', browserSync.reload);
 }
 
+exports.clear = clear;
 exports.html = html;
 exports.style = style;
 exports.server = server;
@@ -35,6 +37,7 @@ exports.watcher = watcher;
 
 //Сборка
 exports.default = series(
+  clear,
   parallel(html, style),
   parallel(watcher, server)
 )
