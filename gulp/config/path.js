@@ -28,4 +28,10 @@ module.exports = {
     build: `${buildFolder}/img/`,
     watch: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
   },
+
+  icons: {
+    src: `${srcFolder}/icons/*.{png,svg}`,
+    build: `${buildFolder}/img/icons/`,
+    watch: `${srcFolder}/icons/*.{png,svg}`,
+  },
 }
