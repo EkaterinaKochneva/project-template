@@ -22,4 +22,10 @@ module.exports = {
     build: `${buildFolder}/js/`,
     watch: `${srcFolder}/**/*.js`,
   },
+
+  imgOptimize: {
+    src: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
+    build: `${buildFolder}/img/`,
+    watch: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
+  },
 }

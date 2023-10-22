@@ -22,6 +22,7 @@ const clear = require('./gulp/tasks/clear.js')
 const html = require('./gulp/tasks/html.js')
 const style = require('./gulp/tasks/style.js')
 const scripts = require('./gulp/tasks/scripts.js')
+const imgOptimize = require('./gulp/tasks/img-optimize.js')
 
 
 //Наблюдатель
@@ -29,18 +30,20 @@ const watcher = () => {
   watch(`${path.html.watch}`, html).on('all', browserSync.reload);
   watch(`${path.styles.watch}`, style).on('all', browserSync.reload);
   watch(`${path.scripts.watch}`, scripts).on('all', browserSync.reload);
+  watch(`${path.imgOptimize.watch}`, imgOptimize).on('all', browserSync.reload);
 }
 
 exports.clear = clear;
 exports.html = html;
 exports.style = style;
 exports.scripts = scripts;
+exports.imgOptimize = imgOptimize;
 exports.server = server;
 exports.watcher = watcher;
 
 //Сборка
 exports.default = series(
   clear,
-  parallel(html, style, scripts),
+  parallel(html, style, scripts, imgOptimize),
   parallel(watcher, server)
 )
