@@ -21,23 +21,26 @@ const server =() => {
 const clear = require('./gulp/tasks/clear.js')
 const html = require('./gulp/tasks/html.js')
 const style = require('./gulp/tasks/style.js')
+const scripts = require('./gulp/tasks/scripts.js')
 
 
 //Наблюдатель
 const watcher = () => {
   watch(`${path.html.watch}`, html).on('all', browserSync.reload);
   watch(`${path.styles.watch}`, style).on('all', browserSync.reload);
+  watch(`${path.scripts.watch}`, scripts).on('all', browserSync.reload);
 }
 
 exports.clear = clear;
 exports.html = html;
 exports.style = style;
+exports.scripts = scripts;
 exports.server = server;
 exports.watcher = watcher;
 
 //Сборка
 exports.default = series(
   clear,
-  parallel(html, style),
+  parallel(html, style, scripts),
   parallel(watcher, server)
 )

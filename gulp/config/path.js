@@ -15,5 +15,11 @@ module.exports = {
     src: `${srcFolder}/pages/*.html`,
     build: `${buildFolder}/`,
     watch: `${srcFolder}/**/*.html`
-  }
+  },
+
+  scripts: {
+    src: `${srcFolder}/js/*.js`,
+    build: `${buildFolder}/js/`,
+    watch: `${srcFolder}/**/*.js`,
+  },
 }
