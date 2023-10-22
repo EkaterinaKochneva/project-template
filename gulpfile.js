@@ -24,6 +24,7 @@ const style = require('./gulp/tasks/style.js')
 const scripts = require('./gulp/tasks/scripts.js')
 const imgOptimize = require('./gulp/tasks/img-optimize.js')
 const icons = require('./gulp/tasks/icons.js')
+const spriteSvg = require('./gulp/tasks/sprite-svg.js')
 
 
 //Наблюдатель
@@ -33,6 +34,7 @@ const watcher = () => {
   watch(`${path.scripts.watch}`, scripts).on('all', browserSync.reload);
   watch(`${path.imgOptimize.watch}`, imgOptimize).on('all', browserSync.reload);
   watch(`${path.icons.watch}`, icons).on('all', browserSync.reload);
+  watch(`${path.spriteSvg.watch}`, spriteSvg).on('all', browserSync.reload);
 }
 
 exports.clear = clear;
@@ -41,6 +43,7 @@ exports.style = style;
 exports.scripts = scripts;
 exports.imgOptimize = imgOptimize;
 exports.icons = icons;
+exports.spriteSvg = spriteSvg;
 
 exports.server = server;
 exports.watcher = watcher;
@@ -48,6 +51,6 @@ exports.watcher = watcher;
 //Сборка
 exports.default = series(
   clear,
-  parallel(html, style, scripts, imgOptimize, icons),
+  parallel(html, style, scripts, imgOptimize, icons, spriteSvg),
   parallel(watcher, server)
 )

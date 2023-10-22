@@ -34,4 +34,10 @@ module.exports = {
     build: `${buildFolder}/img/icons/`,
     watch: `${srcFolder}/icons/*.{png,svg}`,
   },
+
+  spriteSvg: {
+    src: `${srcFolder}/sprite/*.svg`,
+    build: `${buildFolder}/img/sprite/`,
+    watch: `${srcFolder}/sprite/*.svg`,
+  },
 }
