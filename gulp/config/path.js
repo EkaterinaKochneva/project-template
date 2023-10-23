@@ -40,4 +40,10 @@ module.exports = {
     build: `${buildFolder}/img/sprite/`,
     watch: `${srcFolder}/sprite/*.svg`,
   },
+
+  fonts: {
+    src: `${srcFolder}/fonts/**/*.{eot,ttf,otf,woff,woff2}`,
+    build: `${buildFolder}/fonts/`,
+    watch: `${srcFolder}/font/*.{eot,ttf,otf,woff,woff2}`,
+  },
 }

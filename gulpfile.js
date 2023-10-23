@@ -25,6 +25,7 @@ const scripts = require('./gulp/tasks/scripts.js')
 const imgOptimize = require('./gulp/tasks/img-optimize.js')
 const icons = require('./gulp/tasks/icons.js')
 const spriteSvg = require('./gulp/tasks/sprite-svg.js')
+const fonts = require('./gulp/tasks/fonts.js')
 
 
 //Наблюдатель
@@ -44,6 +45,7 @@ exports.scripts = scripts;
 exports.imgOptimize = imgOptimize;
 exports.icons = icons;
 exports.spriteSvg = spriteSvg;
+exports.fonts = fonts;
 
 exports.server = server;
 exports.watcher = watcher;
@@ -51,6 +53,6 @@ exports.watcher = watcher;
 //Сборка
 exports.default = series(
   clear,
-  parallel(html, style, scripts, imgOptimize, icons, spriteSvg),
+  parallel(html, style, scripts, imgOptimize, icons, spriteSvg, fonts),
   parallel(watcher, server)
 )
