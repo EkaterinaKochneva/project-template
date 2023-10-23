@@ -1,6 +1,8 @@
 const { watch, series, parallel } = require('gulp');
 const browserSync = require('browser-sync').create();
+
 const path = require('./gulp/config/path.js');
+const app = require('./gulp/config/app.js');
 
 //Сервер
 const server =() => {
@@ -51,8 +53,13 @@ exports.server = server;
 exports.watcher = watcher;
 
 //Сборка
-exports.default = series(
+
+const build = series(
   clear,
   parallel(html, style, scripts, imgOptimize, icons, spriteSvg, fonts),
+)
+const dev = series(
+  build,
   parallel(watcher, server)
 )
+exports.default = app.isProd ? build : dev;

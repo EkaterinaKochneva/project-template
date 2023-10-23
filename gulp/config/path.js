@@ -6,7 +6,7 @@ module.exports = {
   srcFolder: srcFolder,
 
   styles: {
-    src: `${srcFolder}/styles/style.scss`,
+    src: `${srcFolder}/styles/main.scss`,
     build: `${buildFolder}/css/`,
     watch: `${srcFolder}/**/*.scss`,
   },
