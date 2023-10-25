@@ -4,7 +4,7 @@ const svgSprite = require('gulp-svg-sprite');
 const cheerio = require('gulp-cheerio');
 
 module.exports = function spriteSvg() {
-  return src(`${path.spriteSvg.src}`)
+  return src(path.spriteSvg.src)
     .pipe(cheerio({
       run($) {
         $('[fill]').removeAttr('fill');
@@ -21,5 +21,5 @@ module.exports = function spriteSvg() {
       }
     }))
     
-    .pipe(dest(`${path.spriteSvg.build}`))
+    .pipe(dest(path.spriteSvg.build))
 }

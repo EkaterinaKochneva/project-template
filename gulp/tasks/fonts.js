@@ -5,12 +5,12 @@ const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
 
 module.exports = function fonts() {
-  return src(`${path.fonts.src}`)
-    .pipe(newer(`${path.fonts.build}`))
+  return src(path.fonts.src)
+    .pipe(newer(path.fonts.build))
     .pipe(fonter({
       formats: ['ttf','woff']
     }))
-    .pipe(dest(`${path.fonts.build}`))
+    .pipe(dest(path.fonts.build))
     .pipe(ttf2woff2())
-    .pipe(dest(`${path.fonts.build}`))
+    .pipe(dest(path.fonts.build))
 }

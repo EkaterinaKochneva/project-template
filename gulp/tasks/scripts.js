@@ -10,15 +10,15 @@ const uglify = require('gulp-uglify-es').default;
 const gulpif = require('gulp-if');
 
 module.exports = function scripts() {
-  return src(`${path.scripts.src}`)
+  return src(path.scripts.src)
     .pipe(include())
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    .pipe(dest(`${path.scripts.build}`)) // Несжатый дубль скриптов
+    .pipe(dest(path.scripts.build)) // Несжатый дубль скриптов
     .pipe(gulpif(app.isProd, uglify()))
     .pipe(rename({
       extname: ".min.js"
     }))
-    .pipe(dest(`${path.scripts.build}`))
+    .pipe(dest(path.scripts.build))
 }

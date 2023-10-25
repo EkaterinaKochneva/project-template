@@ -3,7 +3,7 @@ const path = require('../config/path.js');
 const fileInclude = require('gulp-file-include');
 
 module.exports = function html() {
-  return src(`${path.html.src}`)
+  return src(path.html.src)
     .pipe(fileInclude())
-    .pipe(dest(`${path.html.build}`))
+    .pipe(dest(path.html.build))
 }

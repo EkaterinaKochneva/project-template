@@ -11,7 +11,7 @@ const groupCssMediaQueries = require('gulp-group-css-media-queries');
 const gulpif = require('gulp-if');
 
 module.exports = function style() {
-  return src(`${path.styles.src}`)
+  return src(path.styles.src)
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
@@ -20,10 +20,10 @@ module.exports = function style() {
     .pipe(rename({
       basename: "style",
     }))
-    .pipe(dest(`${path.styles.build}`)) //Несжатый дубль файла стилей
+    .pipe(dest(path.styles.build)) //Несжатый дубль файла стилей
     .pipe(gulpif(app.isProd, cleanCss()))
     .pipe(rename({
       extname: ".min.css"
     }))
-    .pipe(dest(`${path.styles.build}`))
+    .pipe(dest(path.styles.build))
 }
