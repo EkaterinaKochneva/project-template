@@ -8,7 +8,7 @@ const app = require('./gulp/config/app.js');
 const server =() => {
 	browserSync.init({
 		server: {
-			baseDir: `${path.buildFolder}`,
+			baseDir: path.buildFolder,
 			serveStaticOptions: {
         extensions: ['html'],
       },
@@ -32,12 +32,12 @@ const fonts = require('./gulp/tasks/fonts.js')
 
 //Наблюдатель
 const watcher = () => {
-  watch(`${path.html.watch}`, html).on('all', browserSync.reload);
-  watch(`${path.styles.watch}`, style).on('all', browserSync.reload);
-  watch(`${path.scripts.watch}`, scripts).on('all', browserSync.reload);
-  watch(`${path.imgOptimize.watch}`, imgOptimize).on('all', browserSync.reload);
-  watch(`${path.icons.watch}`, icons).on('all', browserSync.reload);
-  watch(`${path.spriteSvg.watch}`, spriteSvg).on('all', browserSync.reload);
+  watch(path.html.watch, html).on('all', browserSync.reload);
+  watch(path.styles.watch, style).on('all', browserSync.reload);
+  watch(path.scripts.watch, scripts).on('all', browserSync.reload);
+  watch(path.imgOptimize.watch, imgOptimize).on('all', browserSync.reload);
+  watch(path.icons.watch, icons).on('all', browserSync.reload);
+  watch(path.spriteSvg.watch, spriteSvg).on('all', browserSync.reload);
 }
 
 exports.clear = clear;

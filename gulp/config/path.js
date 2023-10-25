@@ -7,7 +7,7 @@ module.exports = {
 
   styles: {
     src: `${srcFolder}/styles/main.scss`,
-    build: `${buildFolder}/css/`,
+    build: `${buildFolder}/assets/css/`,
     watch: `${srcFolder}/**/*.scss`,
   },
   
@@ -19,31 +19,31 @@ module.exports = {
 
   scripts: {
     src: `${srcFolder}/js/*.js`,
-    build: `${buildFolder}/js/`,
+    build: `${buildFolder}/assets/js/`,
     watch: `${srcFolder}/**/*.js`,
   },
 
   imgOptimize: {
-    src: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
-    build: `${buildFolder}/img/`,
-    watch: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
+    src: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
+    build: `${buildFolder}/assets/img/`,
+    watch: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
   },
 
   icons: {
-    src: `${srcFolder}/icons/*.{png,svg}`,
-    build: `${buildFolder}/img/icons/`,
-    watch: `${srcFolder}/icons/*.{png,svg}`,
+    src: `${srcFolder}/assets/icons/*.{png,svg}`,
+    build: `${buildFolder}/assets/img/icons/`,
+    watch: `${srcFolder}/assets/icons/*.{png,svg}`,
   },
 
   spriteSvg: {
-    src: `${srcFolder}/sprite/*.svg`,
-    build: `${buildFolder}/img/sprite/`,
-    watch: `${srcFolder}/sprite/*.svg`,
+    src: `${srcFolder}/assets/sprite/*.svg`,
+    build: `${buildFolder}/assets/img/svg-sprite/`,
+    watch: `${srcFolder}/assets/sprite/*.svg`,
   },
 
   fonts: {
-    src: `${srcFolder}/fonts/**/*.{eot,ttf,otf,woff,woff2}`,
-    build: `${buildFolder}/fonts/`,
-    watch: `${srcFolder}/font/*.{eot,ttf,otf,woff,woff2}`,
+    src: `${srcFolder}/assets/fonts/**/*.{eot,ttf,otf,woff,woff2}`,
+    build: `${buildFolder}/assets/fonts/`,
+    watch: `${srcFolder}/assets/font/*.{eot,ttf,otf,woff,woff2}`,
   },
 }
