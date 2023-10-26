@@ -28,6 +28,8 @@ const imgOptimize = require('./gulp/tasks/img-optimize.js')
 const icons = require('./gulp/tasks/icons.js')
 const spriteSvg = require('./gulp/tasks/sprite-svg.js')
 const fonts = require('./gulp/tasks/fonts.js')
+const libJs = require('./gulp/tasks/lib-js.js')
+const libScss = require('./gulp/tasks/lib-scss.js')
 
 
 //Наблюдатель
@@ -38,6 +40,8 @@ const watcher = () => {
   watch(path.imgOptimize.watch, imgOptimize).on('all', browserSync.reload);
   watch(path.icons.watch, icons).on('all', browserSync.reload);
   watch(path.spriteSvg.watch, spriteSvg).on('all', browserSync.reload);
+  watch(path.libJs.watch, libJs).on('all', browserSync.reload);
+  watch(path.libScss.watch, libScss).on('all', browserSync.reload);
 }
 
 exports.clear = clear;
@@ -48,6 +52,8 @@ exports.imgOptimize = imgOptimize;
 exports.icons = icons;
 exports.spriteSvg = spriteSvg;
 exports.fonts = fonts;
+exports.libJs = libJs;
+exports.libScss = libScss;
 
 exports.server = server;
 exports.watcher = watcher;
@@ -56,7 +62,7 @@ exports.watcher = watcher;
 
 const build = series(
   clear,
-  parallel(html, style, scripts, imgOptimize, icons, spriteSvg, fonts),
+  parallel(html, style, scripts, imgOptimize, icons, spriteSvg, fonts, libJs, libScss),
 )
 const dev = series(
   build,

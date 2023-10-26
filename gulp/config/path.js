@@ -8,7 +8,7 @@ module.exports = {
   styles: {
     src: `${srcFolder}/styles/main.scss`,
     build: `${buildFolder}/assets/css/`,
-    watch: `${srcFolder}/**/*.scss`,
+    watch: [`${srcFolder}/**/*.scss`, `!${srcFolder}/assets/lib/**/*.scss`],
   },
   
   html: {
@@ -20,7 +20,7 @@ module.exports = {
   scripts: {
     src: `${srcFolder}/js/*.js`,
     build: `${buildFolder}/assets/js/`,
-    watch: `${srcFolder}/**/*.js`,
+    watch: [`${srcFolder}/**/*.js`, `!${srcFolder}/assets/lib/**/*.js`],
   },
 
   imgOptimize: {
@@ -45,5 +45,17 @@ module.exports = {
     src: `${srcFolder}/assets/fonts/**/*.{eot,ttf,otf,woff,woff2}`,
     build: `${buildFolder}/assets/fonts/`,
     watch: `${srcFolder}/assets/font/*.{eot,ttf,otf,woff,woff2}`,
+  },
+
+  libJs: {
+    src: `${srcFolder}/assets/lib/**/*.js`,
+    build: `${buildFolder}/assets/lib/`,
+    watch: `${srcFolder}/assets/lib/**/*.js`,
+  },
+
+  libScss: {
+    src: `${srcFolder}/assets/lib/**/*.scss`,
+    build: `${buildFolder}/assets/lib/`,
+    watch: `${srcFolder}/assets/lib/**/*.scss`,
   },
 }
