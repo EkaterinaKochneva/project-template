@@ -8,7 +8,7 @@ module.exports = function fonts() {
   return src(path.fonts.src)
     .pipe(newer(path.fonts.build))
     .pipe(fonter({
-      formats: ['ttf','woff']
+      formats: ['woff']
     }))
     .pipe(dest(path.fonts.build))
     .pipe(ttf2woff2())

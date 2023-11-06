@@ -44,7 +44,7 @@ module.exports = {
   fonts: {
     src: `${srcFolder}/assets/fonts/**/*.{eot,ttf,otf,woff,woff2}`,
     build: `${buildFolder}/assets/fonts/`,
-    watch: `${srcFolder}/assets/font/*.{eot,ttf,otf,woff,woff2}`,
+    watch: `${srcFolder}/assets/fonts/*.{eot,ttf,otf,woff,woff2}`,
   },
 
   libJs: {
