@@ -4,12 +4,20 @@
     "title":"Главная"
   })
   <body>
+    <div class="wrapper">
+      @@include('../components/header/index.html')
 
-    @@include('../components/header/index.html')
+      <main>
 
-    <h1>Привет!</h1>
+        <div class="container">
+          <h1>Привет!</h1>
+        </div>
 
-    @@include('../components/footer/index.html')
+      </main>  
+      @@include('../components/footer/index.html')
+    </div>
+
+
     
     <script src="/assets/js/scripts.min.js"></script>
 
