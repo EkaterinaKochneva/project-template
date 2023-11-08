@@ -12,7 +12,7 @@ module.exports = {
   },
   
   html: {
-    src: `${srcFolder}/pages/*.html`,
+    src: `${srcFolder}/pages/**/*.html`,
     build: `${buildFolder}/`,
     watch: `${srcFolder}/**/*.html`
   },
