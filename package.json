@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp --production",
-    "new:page": "hygen new page"
+    "new:page": "hygen new page",
+    "new:block": "hygen new component"
   },
   "author": "Nedobezhkina Ekaterina",
   "license": "ISC",
