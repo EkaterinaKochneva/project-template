@@ -21,13 +21,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-input,
-button,
-textarea {
-    font-family: $main-font-family;
-    font-size: inherit;
-}
-
 button {
     cursor: pointer;
     color: inherit;
