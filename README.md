@@ -18,6 +18,10 @@ npm run dev
 ```
 npm run build
 ```
+- Деплой проекта на гитхаб в ветку build: 
+```
+npm run deploy
+```
 - Создать папку страницы: 
 ```
 npm run new:page
