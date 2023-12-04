@@ -37,6 +37,7 @@
   }
 
   &__header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,6 +47,7 @@
   }
 
   &__close {
+    right: 0;
     background: transparent;
     border: 0;
 
