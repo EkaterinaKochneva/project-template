@@ -63,5 +63,11 @@ module.exports = {
     src: `${srcFolder}/assets/favicon/favicon.ico`,
     build: `${buildFolder}/`,
     watch: `${srcFolder}/assets/favicon/favicon.ico`
+  },
+
+  files: {
+    src: `${srcFolder}/assets/files/**/*.*`,
+    build: `${buildFolder}/assets/files/`,
+    watch: `${srcFolder}/assets/files/**/*.*`
   }
 }
