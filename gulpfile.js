@@ -77,7 +77,6 @@ const build = series(
 
 const dev = series(
   mainTasks,
-  favicon,
   parallel(watcher, server)
 )
 exports.default = app.isProd ? build : dev;
