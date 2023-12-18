@@ -44,7 +44,7 @@ const watcher = () => {
   watch(path.spriteSvg.watch, spriteSvg).on('all', browserSync.reload);
   watch(path.libJs.watch, libJs).on('all', browserSync.reload);
   watch(path.libScss.watch, libScss).on('all', browserSync.reload)
-  // watch(path.favicon.watch, favicon).on('all', browserSync.reload);
+  watch(path.favicon.watch, favicon).on('all', browserSync.reload);
 }
 
 exports.clear = clear;
@@ -67,12 +67,11 @@ exports.deploy = deploy;
 
 const mainTasks = series(
   clear,
-  parallel(html, style, scripts, imgOptimize, icons, spriteSvg, fonts, libJs, libScss),
+  parallel(html, style, scripts, imgOptimize, icons, spriteSvg, fonts, libJs, libScss, favicon),
 )
 
 const build = series(
-  mainTasks,
-  favicon
+  mainTasks  
 )
 
 const dev = series(
